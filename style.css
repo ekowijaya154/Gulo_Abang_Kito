@@ -258,34 +258,41 @@ a {
   align-items: center;
   gap: 14px;
   width: 100%;
-  padding: 14px 18px;
-  border-radius: var(--radius);
-  font-weight: 500;
-  color: var(--white);
-  background: var(--brown);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), filter 0.3s var(--ease);
+  padding: 18px 22px;
+  border-radius: 28px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  transition: .3s ease;
 }
 
 .link-btn__icon {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.18);
-  font-size: 1.05rem;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.link-btn__icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .link-btn__text {
   flex: 1;
   text-align: left;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
 .link-btn__arrow {
-  opacity: 0.8;
-  transition: transform 0.3s var(--ease);
+  font-size: 1.5rem;
+  opacity: .9;
 }
 
 .link-btn:hover,
@@ -307,23 +314,23 @@ a {
 /* Brand gradients */
 
 .link-btn.ig {
-  background: linear-gradient(270deg, #0f172a, #1e293b, #334155);
+  background: linear-gradient(120deg, #ff7a18, #ff006e, #8338ec);
 }
 
 .link-btn.fb {
-  background: linear-gradient(270deg, #1e293b, #334155, #475569);
+  background: linear-gradient(120deg, #1877f2, #2563eb, #1d4ed8);
 }
 
 .link-btn.sp {
-  background: linear-gradient(270deg, #111827, #1f2937, #374151);
+  background: linear-gradient(120deg, #ff512f, #ff5e00, #ff7b00);
 }
 
 .link-btn.wa {
-  background: linear-gradient(270deg, #0f766e, #0e7490, #164e63);
+  background: linear-gradient(120deg, #16a34a, #0f9b8e, #0891b2);
 }
 
 .link-btn.tt {
-  background: linear-gradient(270deg, #312e81, #4338ca, #6366f1);
+  background: linear-gradient(120deg, #0f172a, #e6005c);
 }
 
 /* Ripple */
