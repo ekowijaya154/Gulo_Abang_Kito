@@ -462,9 +462,6 @@ a {
   }
 }
 
-
-
-
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -562,4 +559,16 @@ a {
   100% {
     text-shadow: 0 0 5px rgba(255,255,255,.2);
   }
+}
+
+.link-btn.ig {
+  background: red !important;
+}
+
+.link-btn.fb {
+  background: blue !important;
+}
+
+.link-btn.sp {
+  background: orange !important;
 }
