@@ -197,6 +197,8 @@ a {
   border-radius: 50%;
   object-fit: cover;
   background: var(--cream);
+
+  animation: logoFloat 4s ease-in-out infinite;
 }
 
 .brand {
@@ -205,6 +207,9 @@ a {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
+
+  text-shadow: 0 0 10px rgba(255,255,255,.3);
+  animation: glowText 3s ease-in-out infinite;
 }
 
 .subtitle {
@@ -300,17 +305,25 @@ a {
 }
 
 /* Brand gradients */
+
 .link-btn.ig {
-  background: linear-gradient(120deg, #833ab4, #e1306c 55%, #f77737);
+  background: linear-gradient(270deg, #0f172a, #1e293b, #334155);
 }
+
 .link-btn.fb {
-  background: linear-gradient(120deg, #1877f2, #0f5ac0);
+  background: linear-gradient(270deg, #1e293b, #334155, #475569);
 }
+
 .link-btn.sp {
-  background: linear-gradient(120deg, #ee4d2d, #ff7337);
+  background: linear-gradient(270deg, #111827, #1f2937, #374151);
 }
+
 .link-btn.wa {
-  background: linear-gradient(120deg, #25d366, var(--green));
+  background: linear-gradient(270deg, #0f766e, #0e7490, #164e63);
+}
+
+.link-btn.tt {
+  background: linear-gradient(270deg, #312e81, #4338ca, #6366f1);
 }
 
 /* Ripple */
@@ -494,5 +507,52 @@ a {
   }
   .card {
     max-width: 460px;
+  }
+}
+
+.link-btn {
+  background-size: 400% 400%;
+  animation: moonlightMove 10s ease infinite;
+}
+
+@keyframes moonlightMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes logoFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px rgba(255,255,255,.2);
+  }
+
+  50% {
+    text-shadow: 0 0 20px rgba(255,255,255,.7);
+  }
+
+  100% {
+    text-shadow: 0 0 5px rgba(255,255,255,.2);
   }
 }
