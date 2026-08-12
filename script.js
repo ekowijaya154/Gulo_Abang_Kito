@@ -32,29 +32,52 @@
     } catch (e) {
       saved = null;
     }
-    if (saved === "light" || saved === "dark") return saved;
+    if (
+  saved === "light" ||
+  saved === "dark" ||
+  saved === "moonlight"
+) {
+  return saved;
+}
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
   }
 
   function applyTheme(theme) {
-    root.setAttribute("data-theme", theme);
-    if (toggle) {
-      toggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+  root.setAttribute("data-theme", theme);
+
+  if (toggle) {
+    toggle.setAttribute(
+      "aria-pressed",
+      theme === "dark" ? "true" : "false"
+    );
+
+    if (theme === "dark") {
       toggle.innerHTML =
-        theme === "dark"
-          ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
-          : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
-    }
-    try {
-      localStorage.setItem(STORAGE_KEY, theme);
-    } catch (e) {
-      /* storage unavailable — ignore */
+        '<i class="fa-solid fa-sun" aria-hidden="true"></i>';
+
+    } else if (theme === "moonlight") {
+      toggle.innerHTML =
+        '<i class="fa-solid fa-star" aria-hidden="true"></i>';
+
+    } else {
+      toggle.innerHTML =
+        '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
     }
   }
 
+  try {
+    localStorage.setItem(STORAGE_KEY, theme);
+  } catch (e) {
+    /* storage unavailable — ignore */
+  }
+}
+
   applyTheme(detectInitialTheme());
+  window.setTheme = function(theme) {
+  applyTheme(theme);
+};
 
   if (toggle) {
     toggle.addEventListener("click", function () {

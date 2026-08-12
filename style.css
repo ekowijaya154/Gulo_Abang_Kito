@@ -35,15 +35,33 @@
 }
 
 [data-theme="dark"] {
-  --bg-grad-1: #1a1412;
-  --bg-grad-2: #241b17;
+  --bg-grad-1:#1a1412;
+  --bg-grad-2:#241b17;
+
+  --surface:#221a17;
+  --text:#f6efe4;
+  --text-muted:#b9a89f;
+
+  --border: rgba(255,248,231,.12);
+
+  --shadow-sm:0 4px 14px rgba(0,0,0,.4);
+  --shadow-md:0 14px 34px rgba(0,0,0,.5);
+}
+
+[data-theme="moonlight"] {
+  --bg-grad-1: #0f172a;
+  --bg-grad-2: #7c3aed;
+
   --surface: #221a17;
-  --text: #f6efe4;
-  --text-muted: #b9a89f;
-  --border: rgba(255, 248, 231, 0.12);
-  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
+
+  --text: #ffffff;
+  --text-muted: #d1d5db;
+
+  --border: rgba(255,255,255,.15);
+
+  --shadow-sm: 0 4px 14px rgba(139,92,246,.35);
+  --shadow-md: 0 14px 34px rgba(139,92,246,.40);
+  --shadow-lg: 0 24px 60px rgba(236,72,153,.35);
 }
 
 /* ============ 2. Base & Reset ============ */
@@ -402,6 +420,38 @@ a {
   right: 18px;
 }
 
+.theme-selector{
+  position: fixed;
+  top: 75px;
+  right: 18px;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-selector button{
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text);
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: .3s ease;
+}
+
+.theme-selector button:hover{
+  transform: scale(1.1);
+}
+
 .theme-toggle:hover,
 .to-top:hover {
   transform: translateY(-3px) scale(1.06);
@@ -571,4 +621,13 @@ a {
 
 .link-btn.sp {
   background: orange !important;
+}
+[data-theme="moonlight"] body::before {
+  background: #8b5cf6;
+  opacity: .35;
+}
+
+[data-theme="moonlight"] body::after {
+  background: #ec4899;
+  opacity: .30;
 }

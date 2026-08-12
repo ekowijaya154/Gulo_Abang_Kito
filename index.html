@@ -54,16 +54,22 @@
 
     <!-- ===== Theme Toggle ===== -->
     <button
-      class="theme-toggle"
-      id="themeToggle"
-      type="button"
-      aria-label="Ganti mode gelap atau terang"
-      aria-pressed="false"
-    >
-      <i class="fa-solid fa-moon" aria-hidden="true"></i>
-    </button>
+  class="theme-toggle"
+  id="themeToggle"
+  type="button"
+  aria-label="Ganti mode gelap atau terang"
+  aria-pressed="false"
+>
+  <i class="fa-solid fa-moon" aria-hidden="true"></i>
+</button>
 
-    <main class="page">
+<div class="theme-selector">
+  <button onclick="setTheme('light')">☀️</button>
+  <button onclick="setTheme('dark')">🌙</button>
+  <button onclick="setTheme('moonlight')">✨</button>
+
+</div>
+ <main class="page">
       <!-- ===== Profile Card ===== -->
       <section class="card reveal" aria-labelledby="brandTitle">
         <header class="card__head">
