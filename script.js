@@ -79,11 +79,18 @@
   applyTheme(theme);
 };
 
-  if (toggle) {
-    toggle.addEventListener("click", function () {
-      applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
-    });
+  toggle.addEventListener("click", function () {
+  const current = root.getAttribute("data-theme");
+
+  if (current === "light") {
+    applyTheme("dark");
+  } else if (current === "dark") {
+    applyTheme("moonlight");
+  } else {
+    applyTheme("light");
   }
+});
+  
 
   /* ---------- 3. Scroll reveal ---------- */
   var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
